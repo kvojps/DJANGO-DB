@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+    <h1>Registre-se agora </h1>
+    <br/><br/>
+
+    <form method="POST" action="{% url 'join' %}">
+    {% csrf_token %}
+        
+        <div class="mb-3">
+            <input type="text" class="form-control" aria-describedby="emailHelp"
+            placeholder="Primeiro nome" name="fname">
+        </div>
+        
+        <div class="mb-3">
+            <input type="text" class="form-control"  aria-describedby="emailHelp"
+            placeholder="Último nome " name="lname">
+        </div>
+
+        <div class="mb-3">
+            <input type="text" class="form-control"  aria-describedby="emailHelp"
+            placeholder="Idade" name="age">
+        </div>
+        
+        <div class="mb-3">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Email" name="email">
+        </div>
+
+        <div class="mb-3">
+          <input type="password" class="form-control" id="exampleInputPassword1"
+          placeholder="Senha" name="passwd">
+        </div>
+
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Manter informações</label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Registrar-se</button>
+      </form>
+
+{% endblock %}<
